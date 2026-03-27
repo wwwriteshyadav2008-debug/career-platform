@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Career Coach</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                DEFAULT: '#6C5CE7',
+                light: '#8E7CFF',
+                dark: '#5A4BCC'
+              },
+              background: '#F7F8FC',
+              gray: {
+                900: '#111827',
+                800: '#1f2937',
+                700: '#374151',
+                600: '#4b5563',
+                500: '#6b7280',
+                400: '#9ca3af',
+                300: '#d1d5db',
+                200: '#e5e7eb',
+                100: '#f3f4f6',
+                50: '#f9fafb',
+              }
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-out forwards',
+              'slide-up': 'slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'slide-down': 'slideDown 0.5s ease-out forwards',
+              'slide-left': 'slideLeft 0.5s ease-out forwards',
+              'slide-right': 'slideRight 0.5s ease-out forwards',
+              'scale-in': 'scaleIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'float': 'float 4s ease-in-out infinite',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'glow-pulse': 'glow-pulse 5s ease-in-out infinite',
+              'typing-dot': 'typing 1.4s infinite ease-in-out both',
+              'blob': 'blob 7s infinite',
+              'gradient': 'gradient 15s ease infinite',
+            },
+            keyframes: {
+              gradient: {
+                '0%': { backgroundPosition: '0% 50%' },
+                '50%': { backgroundPosition: '100% 50%' },
+                '100%': { backgroundPosition: '0% 50%' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { opacity: '0', transform: 'translateY(40px) scale(0.95)' },
+                '100%': { opacity: '1', transform: 'translateY(0) scale(1)' },
+              },
+              slideDown: {
+                '0%': { opacity: '0', transform: 'translateY(-20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              slideLeft: {
+                '0%': { opacity: '0', transform: 'translateX(20px)' },
+                '100%': { opacity: '1', transform: 'translateX(0)' },
+              },
+              slideRight: {
+                '0%': { opacity: '0', transform: 'translateX(-20px)' },
+                '100%': { opacity: '1', transform: 'translateX(0)' },
+              },
+              scaleIn: {
+                '0%': { opacity: '0', transform: 'scale(0.95)' },
+                '100%': { opacity: '1', transform: 'scale(1)' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              'glow-pulse': {
+                '0%, 100%': { boxShadow: '0 0 15px rgba(59, 130, 246, 0.3)' },
+                '50%': { boxShadow: '0 0 35px rgba(59, 130, 246, 0.8)' },
+              },
+              typing: {
+                '0%, 100%': { transform: 'translateY(0px)', opacity: '0.4' },
+                '50%': { transform: 'translateY(-4px)', opacity: '1' },
+              },
+              blob: {
+                "0%": {
+                  transform: "translate(0px, 0px) scale(1)",
+                },
+                "33%": {
+                  transform: "translate(30px, -50px) scale(1.1)",
+                },
+                "66%": {
+                  transform: "translate(-20px, 20px) scale(0.9)",
+                },
+                "100%": {
+                  transform: "translate(0px, 0px) scale(1)",
+                },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style type="text/tailwindcss">
+      @layer base {
+        body {
+          @apply bg-slate-50 text-slate-900;
+        }
+        /* Ensure inputs are always readable with light background and dark text */
+        input, textarea, select {
+          @apply bg-white text-slate-900 border-slate-300 placeholder-slate-400;
+        }
+        /* Reset focus ring to match theme */
+        input:focus, textarea:focus, select:focus {
+          @apply ring-2 ring-primary/20 border-primary outline-none;
+        }
+        /* Fix for browser autofill styles making inputs unreadable */
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus, 
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:focus,
+        select:-webkit-autofill,
+        select:-webkit-autofill:hover,
+        select:-webkit-autofill:focus {
+          -webkit-text-fill-color: #111827;
+          -webkit-box-shadow: 0 0 0px 1000px #ffffff inset;
+          transition: background-color 5000s ease-in-out 0s;
+        }
+      }
+      
+      /* Animation Utilities */
+      .delay-75 { animation-delay: 75ms; }
+      .delay-100 { animation-delay: 100ms; }
+      .delay-150 { animation-delay: 150ms; }
+      .delay-200 { animation-delay: 200ms; }
+      .delay-300 { animation-delay: 300ms; }
+      .delay-400 { animation-delay: 400ms; }
+      .delay-500 { animation-delay: 500ms; }
+      .delay-700 { animation-delay: 700ms; }
+
+      /* 3D Utilities */
+      .preserve-3d { transform-style: preserve-3d; }
+      .transform-z-10 { transform: translateZ(10px); }
+      .transform-z-20 { transform: translateZ(20px); }
+      .transform-z-30 { transform: translateZ(30px); }
+      .transform-z-40 { transform: translateZ(40px); }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "recharts": "https://esm.sh/recharts@^3.7.0",
+    "lottie-react": "https://esm.sh/lottie-react@2.4.0",
+    "motion/react": "https://esm.sh/motion@12.4.7/react"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-50 text-slate-900 font-sans antialiased">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
